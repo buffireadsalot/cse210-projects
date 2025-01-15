@@ -1,7 +1,21 @@
 using System;
 
-class Program
+public class Job 
 {
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello World! This is the Job Project.");
+
+    //properties
+       public string _jobTitle;
+       public string _companyName;
+
+       public int _startYear;
+       public int _endYear;
+
+        //Constructor
+        public void Display()
+        {
+            Console.WriteLine ($"{_jobTitle} ({_companyName}) {_startYear} -{_endyear}");
+        }
+    
+}
+
+   
