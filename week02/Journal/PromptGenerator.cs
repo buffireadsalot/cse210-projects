@@ -1,7 +1,12 @@
+using System;
+using System.Collections.Generic;
 public class PromptGenerator
 {
-    public string _prompts: List<string>;
+    public string List<string> _prompts;
 
-    GetRandomPrompt(): string
+    public string GetRandomPrompt()
+    {
+        return "";
+    }
 
 }
