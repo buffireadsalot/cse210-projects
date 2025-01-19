@@ -1,22 +1,26 @@
 using System;
 
-//[DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
 public class Entry
 {
+    // Fields to store date, prompt, and entry text
+    public string Date;
+    public string PromptText;
+    public string EntryText;
 
-    public string _date();
-    public string _promptText();
-    public string _entryText();
+    // Constructor to initialize the entry
+    public Entry(string date, string promptText, string entryText)
+    {
+        Date = date;
+        PromptText = promptText;
+        EntryText = entryText;
+    }
 
+    // Method to display the entry
     public void Display()
     {
-        Console.WriteLine ($"{_promptText"});
-        Console.WriteLine ($"{_date} | {_entryText}");
+        Console.WriteLine($"Date: {Date}");
+        Console.WriteLine($"Prompt: {PromptText}");
+        Console.WriteLine($"Entry: {EntryText}");
+        Console.WriteLine();
     }
-
 }
-
-    private string GetDebuggerDisplay()
-    {
-        return ToString();
-    }
