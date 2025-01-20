@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-
 public class PromptGenerator
 {
-    // A list to store the prompts
+    // Private field to store the list of prompts
     private List<string> _prompts;
 
     // Constructor to initialize the list of prompts
@@ -23,12 +20,7 @@ public class PromptGenerator
     public string GetRandomPrompt()
     {
         Random random = new Random();
-        int index = random.Next(_prompts.Count); // Get a random index
+        int index = random.Next(_prompts.Count);
         return _prompts[index];
     }
-      
-        //return "";
-       
-
 }
-
