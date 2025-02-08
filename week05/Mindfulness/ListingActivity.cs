@@ -34,5 +34,7 @@ class ListingActivity : Activity
 
         Console.WriteLine($"You listed {items.Count} items.");
         DisplayEndingMessage();
+
+        LogActivity($"Duration: {_duration} seconds.\nPrompt: {prompt}\nItems listed: {items.Count}\nItems: {string.Join(", ", items)}");
     }
 }

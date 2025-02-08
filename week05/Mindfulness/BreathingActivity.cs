@@ -15,5 +15,7 @@ class BreathingActivity : Activity
             ShowCountdown(3);
         }
         DisplayEndingMessage();
+
+        LogActivity($"Duration: {_duration} seconds. Activity: Deep breathing completed.");
     }
 }

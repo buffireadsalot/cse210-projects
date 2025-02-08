@@ -1,7 +1,7 @@
 // Reflecting Activity
 class ReflectingActivity : Activity
 {
-    private List<string> _prompts = new List<string>()
+    private List<string> _prompts = new List<string>
     {
         "Think of a time when you stood up for someone else.",
         "Think of a time when you did something really difficult.",
@@ -9,7 +9,7 @@ class ReflectingActivity : Activity
         "Think of a time when you did something truly selfless."
     };
 
-    private List<string> _questions = new List<string>()
+    private List<string> _questions = new List<string>
     {
         "Why was this experience meaningful to you?",
         "Have you ever done anything like this before?",
@@ -22,7 +22,8 @@ class ReflectingActivity : Activity
         "How can you keep this experience in mind in the future?"
     };
 
-    public ReflectingActivity() : base("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience.") { }
+    public ReflectingActivity() 
+        : base("Reflecting Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience.") { }
 
     public override void Run()
     {
@@ -33,14 +34,19 @@ class ReflectingActivity : Activity
         Console.WriteLine("Take a moment to think about it...");
         ShowSpinner(5);
 
+        List<string> reflections = new List<string>();
         DateTime endTime = DateTime.Now.AddSeconds(_duration);
         while (DateTime.Now < endTime)
         {
             string question = _questions[random.Next(_questions.Count)];
             Console.WriteLine($"Question: {question}");
             ShowSpinner(5);
+            Console.Write("Your response: ");
+            reflections.Add(Console.ReadLine());
         }
 
         DisplayEndingMessage();
+
+        LogActivity($"Duration: {_duration} seconds.\nPrompt: {prompt}\nReflections: {string.Join(", ", reflections)}");
     }
 }

@@ -47,6 +47,12 @@ class Activity
         }
     }
 
+    protected void LogActivity(string details)
+    {
+        string logEntry = $"{DateTime.Now}: {_name}\n{details}\n";
+        File.AppendAllText("activity_log.txt", logEntry);
+    }
+
     public virtual void Run()
     {
         Console.WriteLine("This is a generic activity. Override this method in a subclass for specific behavior.");
