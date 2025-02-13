@@ -1,10 +1,12 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Console.WriteLine("Hello World! This is the EternalQuest Project.");
+        GoalManager manager = new GoalManager();
+        manager.Run();
     }
-    
 }
